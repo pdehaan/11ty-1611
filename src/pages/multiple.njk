@@ -1,0 +1,25 @@
+---
+title: Multiple tags
+tag:
+  - single
+  - multiple
+---
+
+<h1>{{ title }}</h1>
+<p>For I have multiple tags.</p>
+
+<p>Multiple tags should just work as expected, with each element (not letter) on its own line:</p>
+<ol>
+  {% for t in tag %}
+  <li>{{ t }}</li>
+  {% endfor %}
+</ol>
+
+<hr />
+
+<p>But the <code>toArray</code> filter should still work too:</p>
+<ol>
+  {% for t in (tag | toArray) %}
+  <li>{{ t }}</li>
+  {% endfor %}
+</ol>
