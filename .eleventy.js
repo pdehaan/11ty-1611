@@ -1,10 +1,5 @@
 module.exports = (eleventyConfig) => {
-  eleventyConfig.addFilter("toArray", value => {
-    if (Array.isArray(value)) {
-      return value;
-    }
-    return [value];
-  });
+  eleventyConfig.addFilter("toArray", value => Array.isArray(value) ? value : [value]);
 
   return {
     dir: {

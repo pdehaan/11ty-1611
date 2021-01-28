@@ -3,7 +3,7 @@ title: Multiple tags
 tag:
   - single
   - multiple
-permalink: /multiple_njk.html
+permalink: /multiple_liquid.html
 ---
 
 <h1>{{ title }}</h1>
@@ -20,7 +20,8 @@ permalink: /multiple_njk.html
 
 <p>But the <code>toArray</code> filter should still work too:</p>
 <ol>
-  {% for t in (tag | toArray) %}
+  {% assign tags = tag | toArray %}
+  {% for t in tags %}
   <li>{{ t }}</li>
   {% endfor %}
 </ol>

@@ -1,7 +1,7 @@
 ---
 title: Single tag
 tag: single
-permalink: single_njk.html
+permalink: single_liquid.html
 ---
 
 <h1>{{ title }}</h1>
@@ -18,7 +18,8 @@ permalink: single_njk.html
 
 <p>Convert the tag to an array using custom <code>toArray</code> filter:</p>
 <ol>
-  {% for t in (tag | toArray) %}
+  {% assign tags = tag | toArray %}
+  {% for t in tags %}
   <li>{{ t }}</li>
   {% endfor %}
 </ol>
